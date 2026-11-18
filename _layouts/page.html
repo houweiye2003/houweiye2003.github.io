@@ -1,0 +1,10 @@
+---
+layout: default
+---
+{% assign language = page.lang | default: site.defaultContentLanguage %}
+{% assign ui = site.data.i18n[language] %}
+<article>
+  {% include breadcrumbs.html %}
+  <header class="page-header"><h1>{{ page.title | escape }}</h1></header>
+  <div class="post-content">{{ content }}</div>
+</article>

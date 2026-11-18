@@ -1,0 +1,19 @@
+{% assign target = include.target %}
+{% assign valid_target = false %}
+{% if target and target != '' %}
+  {% if target contains 'https://' or target contains 'http://' %}
+    {% assign valid_target = true %}
+  {% else %}
+    {% assign target_first = target | slice: 0 %}
+    {% unless target_first == '/' %}
+      {% if include.pdf %}
+        {% assign target = '/publications/pdf/' | append: target %}
+      {% else %}
+        {% assign target = '/' | append: target %}
+      {% endif %}
+    {% endunless %}
+    {% assign local_file = site.static_files | where: 'path', target | first %}
+    {% if local_file %}{% assign valid_target = true %}{% endif %}
+  {% endif %}
+{% endif %}
+{% if valid_target %}<a href="{% include url.html url=target %}">{% include icon.html name=include.icon %} {{ include.label }}</a>{% endif %}

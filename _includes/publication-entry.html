@@ -1,0 +1,22 @@
+{% assign publication = include.publication %}
+<article class="pub-entry">
+  {% assign cover_url = publication.cover.image %}
+  {% assign show_cover = false %}
+  {% if cover_url and cover_url != '' %}
+    {% if cover_url contains '://' %}
+      {% assign show_cover = true %}
+    {% else %}
+      {% assign cover_first = cover_url | slice: 0 %}
+      {% unless cover_first == '/' %}{% assign cover_url = '/' | append: cover_url %}{% endunless %}
+      {% assign cover_file = site.static_files | where: 'path', cover_url | first %}
+      {% if cover_file %}{% assign show_cover = true %}{% endif %}
+    {% endif %}
+  {% endif %}
+  {% if show_cover %}<div class="entry-cover"><img src="{% include url.html url=cover_url %}" alt="{{ publication.cover.alt | default: publication.title | escape }}" loading="lazy"></div>{% endif %}
+  <div class="pub-meta">
+    <h3 lang="en"><a href="{{ publication.url | relative_url }}">{{ publication.title | escape }}</a></h3>
+    {% if include.summary and publication.summary %}<div class="entry-summary publication-summary" lang="en">{{ publication.summary | markdownify }}</div>{% endif %}
+    {% include publication-authors.html publication=publication %}
+    {% include publication-links.html publication=publication %}
+  </div>
+</article>

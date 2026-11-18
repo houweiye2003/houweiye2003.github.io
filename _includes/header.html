@@ -1,0 +1,25 @@
+<header class="header">
+  <nav class="nav" aria-label="{{ ui.navigation }}">
+    {% assign home_url = '/' | append: language | append: '/' %}
+    <div class="logo">
+      <a href="{{ home_url | relative_url }}">{{ site.title | escape }}</a>
+      <button id="theme-toggle" type="button" aria-label="{{ ui.toggle_theme }}" title="{{ ui.toggle_theme }}" hidden><span aria-hidden="true">◐</span></button>
+    </div>
+    <ul id="menu">
+      {% assign menu = site.languages[language].menu.main | sort: 'weight' %}
+      {% for item in menu %}
+      {% assign item_url = '/' | append: language | append: item.pageRef %}
+      <li><a href="{{ item_url | relative_url }}"{% if page.url contains item_url %} aria-current="page"{% endif %}>{{ item.name }}</a></li>
+      {% endfor %}
+      {% for entry in site.languages %}
+        {% assign other_lang = entry[0] %}
+        {% if other_lang != language %}
+          {% assign translation = translations | where: 'lang', other_lang | first %}
+          {% assign language_url = '/' | append: other_lang | append: '/' %}
+          {% if page.content_key and translation %}{% assign language_url = translation.url %}{% endif %}
+          <li class="language-switch"><a href="{{ language_url | relative_url }}" lang="{{ entry[1].locale }}" hreflang="{{ entry[1].locale }}">{{ entry[1].label }}</a></li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </nav>
+</header>

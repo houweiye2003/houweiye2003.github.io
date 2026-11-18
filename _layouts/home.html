@@ -1,0 +1,34 @@
+---
+layout: default
+---
+{% assign language = page.lang | default: site.defaultContentLanguage %}
+{% assign ui = site.data.i18n[language] %}
+{% assign profile = site.params.homeInfoParams %}
+{% assign introduction = site.languages[language].params.homeInfoParams %}
+<article class="home-info">
+  <h1>{{ introduction.Title | escape }}</h1>
+  <div class="profile-row">
+    <div class="profile-text">{{ introduction.Content | markdownify }}</div>
+    <img class="portrait" src="{% include url.html url=profile.imageUrl %}" width="{{ profile.imageWidth }}" height="{{ profile.imageHeight }}" alt="{{ profile.imageTitle | escape }}">
+  </div>
+  <div class="social-icons">
+    {% for link in site.params.socialIcons %}
+    <a href="{% include url.html url=link.url %}" aria-label="{{ link.title | default: link.name | escape }}" title="{{ link.title | default: link.name | escape }}">{% include icon.html name=link.name %}</a>
+    {% endfor %}
+  </div>
+  <div class="buttons">
+    {% for button in profile.buttons %}
+    <a class="button" href="{% include url.html url=button.url %}">{{ button.name | escape }}</a>
+    {% endfor %}
+  </div>
+</article>
+{% assign publications = site.pages | where: 'content_type', 'publication' | where: 'lang', page.lang | sort: 'order' %}
+{% if site.params.ShowOnlySelectedPubs %}
+  {% assign publications = publications | where: 'selected', true %}
+{% endif %}
+{% if publications.size > 0 %}
+<section aria-labelledby="publications-heading">
+  <h2 class="section-title" id="publications-heading">{% if site.params.ShowOnlySelectedPubs %}{{ ui.selected_publications }}{% else %}{{ ui.publications }}{% endif %}</h2>
+  {% for publication in publications %}{% include publication-entry.html publication=publication summary=true %}{% endfor %}
+</section>
+{% endif %}
