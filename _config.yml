@@ -1,0 +1,64 @@
+title: My Homepage
+description: 你的网站描述
+author: ylu
+url: "https://houweiye2003.github.io"
+baseurl: ""
+timezone: Asia/Shanghai
+lang: zh-CN
+default_lang: zh
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+
+show_only_selected_pubs: true
+profile:
+  image: /images/portrait.png
+  image_alt: my portrait
+  buttons:
+    - name: CV
+      url: /cv.pdf
+    - name: Google Scholar
+      url: "https://scholar.google.com/citations?user=xxxx"
+social_links:
+  - name: GitHub
+    icon: github
+    url: "https://github.com/yourname"
+  - name: Email
+    icon: email
+    url: "mailto:your@email.com"
+
+collections:
+  publications:
+    output: true
+    permalink: /pubs/:name/
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: page
+      lang: zh
+  - scope:
+      path: en
+    values:
+      lang: en
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: publications
+    values:
+      layout: publication
+
+exclude:
+  - example_homepage-main
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .bundle

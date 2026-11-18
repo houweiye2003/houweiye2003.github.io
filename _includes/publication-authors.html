@@ -1,0 +1,6 @@
+<div class="publication-authors">
+  {% for author in include.publication.authors %}
+    {% if author.home contains 'https://' or author.home contains 'http://' %}<a href="{{ author.home | escape }}">{% endif %}<span{% if author.me %} class="author-me"{% endif %}>{{ author.name | escape }}</span>{% if author.home contains 'https://' or author.home contains 'http://' %}</a>{% endif %}{% unless forloop.last %}, {% endunless %}
+  {% endfor %}
+</div>
+{% if include.publication.venue %}<div class="venue">{{ include.publication.venue | markdownify }}</div>{% endif %}

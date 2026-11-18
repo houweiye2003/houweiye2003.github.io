@@ -1,0 +1,8 @@
+<nav class="breadcrumbs" aria-label="{{ ui.breadcrumbs }}">
+  {% assign home_url = '/' | append: language | append: '/' %}
+  <a href="{{ home_url | relative_url }}">{{ ui.home }}</a>
+  {% if include.section %}
+    {% assign section_url = home_url | append: include.section | append: '/' %}
+    <span aria-hidden="true"> » </span><a href="{{ section_url | relative_url }}">{{ include.section_title }}</a>
+  {% endif %}
+</nav>

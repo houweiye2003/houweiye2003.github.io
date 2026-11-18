@@ -1,0 +1,16 @@
+---
+layout: default
+---
+{% assign language = page.lang | default: site.default_lang %}
+{% assign ui = site.data.languages[language] %}
+{% include breadcrumbs.html %}
+<header class="page-header"><h1>{{ page.title | escape }}</h1></header>
+{{ content }}
+{% assign posts = site.posts | where: 'lang', page.lang %}
+{% for post in posts %}
+<article class="post-entry">
+  <h2><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
+  <p class="entry-summary">{{ post.excerpt | strip_html | truncatewords: 35 }}</p>
+  <time class="post-meta" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y-%m-%d' }}</time>
+</article>
+{% endfor %}

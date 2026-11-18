@@ -1,0 +1,10 @@
+<span class="inline-svg" aria-hidden="true">
+  {% case include.name %}
+    {% when 'github' %}{% include icons/github.svg %}
+    {% when 'arxiv' %}{% include icons/arxiv.svg %}
+    {% when 'file' %}{% include icons/file.svg %}
+    {% when 'paperplane' %}{% include icons/paperplane.svg %}
+    {% when 'youtube' %}{% include icons/youtube.svg %}
+    {% when 'email' %}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg>
+  {% endcase %}
+</span>

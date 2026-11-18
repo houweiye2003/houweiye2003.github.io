@@ -1,0 +1,6 @@
+{%- assign first_character = include.url | slice: 0 -%}
+{%- if include.url contains '://' or first_character == '#' or include.url contains 'mailto:' -%}
+  {{- include.url | escape -}}
+{%- else -%}
+  {{- include.url | relative_url | escape -}}
+{%- endif -%}
