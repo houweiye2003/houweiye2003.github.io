@@ -1,8 +1,5 @@
 ---
-title: 关于
-lang: zh
-translation_key: about
-permalink: /zh/about/
+title: 关于 # (填写) 页面标题
 ---
 
 姓名
@@ -26,7 +23,7 @@ Email
 - 1909 - 1911 Professor, University of Zurich.
 - 1902 - 1909 Patent Examiner, Swiss Patent Office (Bern).
 
-## Selected Awards
+## Honors and Awards
 - 2025年10月获研究生至善奖学金(博士组)
 - 2025年5月获国家留学基金委公派博士生奖学金
 - 2025年5月获第八届江苏物理春季学术会议优秀口头报告

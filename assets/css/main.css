@@ -75,7 +75,7 @@ h3 { font-size: 24px; }
 .buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; }
 .button { background: var(--code-bg); border-radius: 6px; padding: 5px 14px; font-size: 16px; }
 .section-title { font-size: 24px; margin: 0 0 24px; }
-.pub-entry, .post-entry { margin-bottom: var(--gap); padding: var(--gap); background: var(--entry); border: 1px solid var(--border); border-radius: var(--radius); }
+.pub-entry { margin-bottom: var(--gap); padding: var(--gap); background: var(--entry); border: 1px solid var(--border); border-radius: var(--radius); }
 .pub-entry { display: flex; gap: 3%; }
 .pub-meta { flex: 5; min-width: 0; margin: auto 0; }
 .pub-entry h3 { margin: 0 0 10px; font-size: 18px; line-height: 1.5; }
@@ -91,8 +91,7 @@ h3 { font-size: 24px; }
 .venue strong { color: #a67c00; }
 .publication-links { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 12px; }
 .publication-links:empty { display: none; }
-.post-entry h2 { margin: 0; font-size: 24px; }
-.post-meta, .breadcrumbs { color: var(--secondary); font-size: 14px; }
+.breadcrumbs { color: var(--secondary); font-size: 14px; }
 .breadcrumbs { margin-bottom: 12px; }
 .page-header { margin: 16px 0 32px; }
 .page-header h1 { margin-bottom: 12px; }
@@ -116,14 +115,6 @@ pre code { padding: 0; background: none; font-size: 14px; }
 .highlight .c, .highlight .c1, .highlight .cm { color: var(--secondary); }
 .highlight .k, .highlight .nt { color: #b35082; }
 .highlight .s, .highlight .s1, .highlight .s2 { color: #32856b; }
-.toc { border: 1px solid var(--border); border-radius: var(--radius); background: var(--code-bg); padding: 12px 16px; font-size: 16px; }
-.toc summary { cursor: pointer; font-weight: 500; }
-.toc ul { list-style: none; padding: 0; margin: 12px 0 0; }
-.toc li { margin: 4px 0; }
-.toc a[data-level="3"] { padding-left: 16px; }
-.toc a[data-level="4"], .toc a[data-level="5"], .toc a[data-level="6"] { padding-left: 32px; }
-.post-nav { display: flex; justify-content: space-between; gap: 24px; font-size: 16px; }
-.post-nav:empty { display: none; }
 .footer { max-width: 768px; margin: auto; padding: 20px 24px; color: var(--secondary); text-align: center; font-size: 12px; }
 .top-link { position: fixed; bottom: 32px; right: 32px; padding: 6px 16px; border-radius: 50%; background: var(--code-bg); box-shadow: 0 1px 5px #0002; }
 .skip-link { position: fixed; left: 12px; top: -100px; padding: 8px; background: var(--theme); z-index: 10; }

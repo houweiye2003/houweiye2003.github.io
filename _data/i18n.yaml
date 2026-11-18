@@ -1,0 +1,40 @@
+# 仅用于界面文字翻译；个人信息、首页介绍及菜单请填写 _config.yml。
+# 两种语言使用相同的键，便于逐项对应。
+zh:
+  home: 首页
+  research: 科研
+  publications: 论文
+  about: 关于
+  selected_publications: 精选论文
+  skip_to_content: 跳转到正文
+  back_to_top: 返回顶部
+  toggle_theme: 切换明暗主题
+  navigation: 主导航
+  breadcrumbs: 面包屑导航
+  copy: 复制
+  copied: 已复制！
+  copy_failed: 复制失败，请选择代码后复制
+  publication_page: 论文主页
+  arxiv: arXiv
+  paper: PDF
+  code: 代码
+  video: 视频
+en:
+  home: Home
+  research: Research
+  publications: Publications
+  about: About
+  selected_publications: Selected Publications
+  skip_to_content: Skip to content
+  back_to_top: Back to top
+  toggle_theme: Toggle light and dark theme
+  navigation: Main navigation
+  breadcrumbs: Breadcrumbs
+  copy: Copy
+  copied: Copied!
+  copy_failed: Copy failed; select and copy the code
+  publication_page: Publication page
+  arxiv: arXiv
+  paper: PDF
+  code: Code
+  video: Video

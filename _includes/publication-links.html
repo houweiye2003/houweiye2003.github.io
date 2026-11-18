@@ -1,17 +1,7 @@
 <div class="publication-links">
-  {% for resource in site.data.publication_links %}
-    {% assign target = include.publication[resource.field] %}
-    {% assign valid_target = false %}
-    {% if target and target != '' %}
-      {% if target contains 'https://' or target contains 'http://' %}
-        {% assign valid_target = true %}
-      {% else %}
-        {% assign target_first = target | slice: 0 %}
-        {% unless target_first == '/' %}{% assign target = '/' | append: target %}{% endunless %}
-        {% assign local_file = site.static_files | where: 'path', target | first %}
-        {% if local_file %}{% assign valid_target = true %}{% endif %}
-      {% endif %}
-    {% endif %}
-    {% if valid_target %}<a href="{% include url.html url=target %}">{% include icon.html name=resource.icon %} {{ resource.label }}</a>{% endif %}
-  {% endfor %}
+  {% include resource-link.html target=include.publication.publication_url label=ui.publication_page icon='paperplane' %}
+  {% include resource-link.html target=include.publication.arxiv label=ui.arxiv icon='arxiv' %}
+  {% include resource-link.html target=include.publication.paper label=ui.paper icon='file' pdf=true %}
+  {% include resource-link.html target=include.publication.code label=ui.code icon='github' %}
+  {% include resource-link.html target=include.publication.video label=ui.video icon='youtube' %}
 </div>

@@ -1,10 +1,10 @@
 ---
 layout: default
 ---
-{% assign language = page.lang | default: site.default_lang %}
-{% assign ui = site.data.languages[language] %}
+{% assign language = page.lang | default: site.defaultContentLanguage %}
+{% assign ui = site.data.i18n[language] %}
 {% include breadcrumbs.html %}
 <header class="page-header"><h1>{{ page.title | escape }}</h1></header>
 <div class="post-content">{{ content }}</div>
-{% assign publications = site.publications | where: 'lang', page.lang | sort: 'order' %}
+{% assign publications = site.pages | where: 'content_type', 'publication' | where: 'lang', page.lang | sort: 'order' %}
 {% for publication in publications %}{% include publication-entry.html publication=publication %}{% endfor %}

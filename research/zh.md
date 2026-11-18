@@ -1,11 +1,10 @@
 ---
-title: Research
-lang: en
-translation_key: research
-permalink: /en/research/
+title: 科研 # (填写) 页面标题
 ---
 
-本页来自 https://www.iqmlab.org/research 围绕“电子结构—有效模型—AI/ML—量子物性”的主线，探索智能量子材料中的新奇机制。
+填写本页时可以借鉴 https://www.iqmlab.org/research 
+
+围绕“电子结构—有效模型—AI/ML—量子物性”的主线，探索智能量子材料中的新奇机制。
 
 ## 研究方向
 1. AI/ML 辅助量子材料发现

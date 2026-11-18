@@ -14,8 +14,8 @@
   {% endif %}
   {% if show_cover %}<div class="entry-cover"><img src="{% include url.html url=cover_url %}" alt="{{ publication.cover.alt | default: publication.title | escape }}" loading="lazy"></div>{% endif %}
   <div class="pub-meta">
-    <h3><a href="{{ publication.url | relative_url }}">{{ publication.title | escape }}</a></h3>
-    {% if include.summary and publication.summary %}<div class="entry-summary publication-summary">{{ publication.summary | markdownify }}</div>{% endif %}
+    <h3 lang="en"><a href="{{ publication.url | relative_url }}">{{ publication.title | escape }}</a></h3>
+    {% if include.summary and publication.summary %}<div class="entry-summary publication-summary" lang="en">{{ publication.summary | markdownify }}</div>{% endif %}
     {% include publication-authors.html publication=publication %}
     {% include publication-links.html publication=publication %}
   </div>

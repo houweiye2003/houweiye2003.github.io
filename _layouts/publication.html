@@ -1,12 +1,12 @@
 ---
 layout: default
 ---
-{% assign language = page.lang | default: site.default_lang %}
-{% assign ui = site.data.languages[language] %}
+{% assign language = page.lang | default: site.defaultContentLanguage %}
+{% assign ui = site.data.i18n[language] %}
 <article>
-  {% include breadcrumbs.html section='pubs' section_title=ui.publications %}
-  <header class="page-header"><h1>{{ page.title | escape }}</h1></header>
+  {% include breadcrumbs.html section='publications' section_title=ui.publications %}
+  <header class="page-header" lang="en"><h1>{{ page.title | escape }}</h1></header>
   {% include publication-authors.html publication=page %}
   {% include publication-links.html publication=page %}
-  <div class="post-content">{{ page.summary | markdownify }}{{ content }}</div>
+  <div class="post-content" lang="en">{{ page.summary | markdownify }}{{ content }}</div>
 </article>

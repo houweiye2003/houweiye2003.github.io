@@ -18,22 +18,7 @@
     update();
   }
 
-  const toc = document.getElementById('table-of-contents');
-  if (toc) {
-    const list = document.createElement('ul');
-    document.querySelectorAll('.post-content h1[id], .post-content h2[id], .post-content h3[id], .post-content h4[id], .post-content h5[id], .post-content h6[id]').forEach(heading => {
-      const item = document.createElement('li');
-      const link = document.createElement('a');
-      link.href = '#' + encodeURIComponent(heading.id);
-      link.textContent = heading.textContent;
-      link.dataset.level = heading.tagName.substring(1);
-      item.appendChild(link);
-      list.appendChild(item);
-    });
-    if (list.children.length) toc.appendChild(list);
-    else toc.closest('details').hidden = true;
-  }
-
+  if (labels.copyEnabled !== 'true') return;
   document.querySelectorAll('.post-content pre > code').forEach(code => {
     const button = document.createElement('button');
     const copy = labels.copyLabel;
